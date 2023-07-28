@@ -38,6 +38,7 @@ public with sharing class WarehouseCalloutService{
             for (Object equipment : jsonRes) {
                 Map<String, Object> mapJSON = (Map<String,Object>)equipment;
                 Product2 myEquipment = new Product2();
+                myEquipment.Name = (String) mapJSON.get('name');
                 myEquipment.Replacement_Part__c = (Boolean) mapJSON.get('replacement');
                 myEquipment.Cost__c = (Integer) mapJSON.get('cost');
                 myEquipment.Current_Inventory__c = (Double) mapJSON.get('quantity');
