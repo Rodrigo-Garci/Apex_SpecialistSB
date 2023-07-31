@@ -6,6 +6,8 @@ global with sharing class WarehouseSyncSchedule implements Schedulable{
     //Everyday at 1:00
 
     global void execute(SchedulableContext ctx){
-        System.enqueueJob(new WarehouseCalloutService());
+        // System.enqueueJob(new WarehouseCalloutService());
+
+        WarehouseCalloutService.runWarehouseEquipmentSync();
     }
 }
